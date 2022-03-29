@@ -18,3 +18,6 @@ const Component = () => {
   return <FaHome className='icon'></FaHome>;
 };
 ```
+
+
+iterate through questions, for item display the single question, toogle to display or hide
