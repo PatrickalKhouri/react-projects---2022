@@ -22,20 +22,19 @@ function App() {
     e.preventDefault() 
     if (!name) {
       showAlert(true,'danger', 'Please enter value')
-    }
-    else if (name && isEditing) {
+    } else if (name && isEditing) {
       setList(
-        list.map(item => {
-        if (item.id === editId) {
-          return {...item, title: name}
-        }
-        return item
+        list.map((item) => {
+          if (item.id === editId) {
+            return { ...item, title: name };
+          }
+          return item;
         })
-      )
-      setName('')
-      setEditId(null)
-      setIsEditing(false)
-      showAlert(true,'success', 'value changed')
+      );
+      setName('');
+      setEditId(null);
+      setIsEditing(false);
+      showAlert(true, 'success', 'value changed');
     } else {
       showAlert(true, 'success', 'item added to the list')
       const newItem = {id: new Date().getTime().toString(), title: name}
